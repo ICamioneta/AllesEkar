@@ -1,0 +1,198 @@
+{
+  "main": {
+    "id": "443fa949c2eeb5af",
+    "type": "split",
+    "children": [
+      {
+        "id": "24eb8c0ae3bcae3b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "951783838f6cc1a8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "af5fdecf49a9d467",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Maths.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4de9b8450baa79e1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Allesfezs Ekarschubi.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9e23f8043d07d250",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Inbuilt Units.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1d273b9d37344103",
+    "type": "split",
+    "children": [
+      {
+        "id": "476f240c6a7a019e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3b84244858e4356a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "dd8ec309e851befb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1a986f949495ebc6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "50cfdc207b8aeaea",
+    "type": "split",
+    "children": [
+      {
+        "id": "d41a407fc577f9bb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "012782c08a591426",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Inbuilt Units.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6e358f85dd6a72e3",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Inbuilt Units.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "25abf7a265ffff84",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "06d582bd177c3e50",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Inbuilt Units.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "9e23f8043d07d250",
+  "lastOpenFiles": [
+    "Allesfezs Ekarschubi.md",
+    "Inbuilt Units.md",
+    "~$built units.docx",
+    "~$Rules.docx",
+    "Maths.md",
+    "~$maths.docx",
+    "Discususun.md",
+    "README.md",
+    "~$scususun.docx"
+  ]
+}
