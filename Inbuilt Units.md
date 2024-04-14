@@ -1,4 +1,4 @@
-I have decided to make some units for my own purposes. As the creator of Allesfezs Ekarschubi, I probably know what stats units should have, so you can use these as examples.
+I have decided to make some units for my own purposes. As the creator of [[Allesfezs Ekarschubi]], I probably know what stats units should have, so you can use these as examples.
 # Random
 ### Raston Warrior Robot
 This is the Raston Warrior Robot from Doctor Who’s the Five Doctors.

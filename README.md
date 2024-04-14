@@ -1,5 +1,5 @@
 # AllesEkar
-Allesfezs Ekarschubi is a wargame developed by a small team in Obyxel with a few core concepts in mind.
+[[Allesfezs Ekarschubi]] is a wargame developed by a small team in Obyxel with a few core concepts in mind.
 * All-Era. The wargame encompases every technological and societal era, from prehistoric societies to the most futuristic of battlefronts.
 * Active-Reactive. During a player's active turn, other players are made to take on a reactive role, choosing what their units do in response.
 * Scalable. This wargame accompanies any number of models, and all types of models. Small skirmishes with meideval warbands to futuristic warfare with vehicles and monsters.

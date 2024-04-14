@@ -31,7 +31,7 @@ The next line is a proper table of 9 attributes. These are described later.
 
 The next line is where the skills go. These are written, and then their aptitude is placed in brackets afterwards.
 
-Equipment comes after that, where each item of equipment is specified. There are lists of equipment later in the rules that you can refer to. Many units have variable equipment. This is represented as a choice within square brackets separated by a line. For example, [Sword | Spear | Poleaxe]. If it makes sense, like if its on the model, more than one of these may be equipped for example a medieval knight wielding a polearm with a sheathed sword.
+Equipment comes after that, where each item of equipment is specified. There are lists of equipment later in the rules that you can refer to. Many units have variable equipment. This is represented as a choice within square brackets separated by a line. For example, \[Sword | Spear | Poleaxe\]. If it makes sense, like if its on the model, more than one of these may be equipped for example a medieval knight wielding a polearm with a sheathed sword.
 
 Quite often, units have access to some kind of magic equivalent. This usually comes on a line after the equipment and should be intuitive to read.
 ### Vehicles
