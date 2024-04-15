@@ -1,0 +1,249 @@
+{
+    "weapon_card":
+    [
+        {
+            "damage_types":
+            [
+                {
+                    "name": "Slash",
+                    "cost": 0
+                },
+                {
+                    "name": "Crush",
+                    "cost": 0
+                },
+                {
+                    "name": "Pierce",
+                    "cost": 0
+                },
+                {
+                    "name": "Bullet",
+                    "cost": 6
+                },
+                {
+                    "name": "AP",
+                    "cost": 10
+                },
+                {
+                    "name": "Laser",
+                    "cost": 8
+                },
+                {
+                    "name": "Plasma",
+                    "cost": 12
+                }
+            ]
+        },
+        {
+            "ranges":
+            [
+                {
+                    "name": "Close Quarters",
+                    "abbreviation": "CQ",
+                    "cost": 0
+                },
+                {
+                    "name": "Short Range",
+                    "abbreviation": "SR",
+                    "cost": 5
+                },
+                {
+                    "name": "Augmented Short Range",
+                    "abbreviation": "ASR",
+                    "cost": 10
+                },
+                {
+                    "name": "Medium Range",
+                    "abbreviation": "MR",
+                    "cost": 8
+                },
+                {
+                    "name": "Augmented Medium Range",
+                    "abbreviation": "AMR",
+                    "cost": "CALCULATION",
+                    "cost_details":
+                    {
+                        "base_cost": 14,
+                        "told": true,
+                        "calculation_format": "base_cost + told"
+                    }
+                },
+                {
+                    "name": "Long Range",
+                    "abbreviation": "LR",
+                    "cost": 18
+                },
+                {
+                    "name": "Artillery Range",
+                    "abbreviation": "AR",
+                    "cost": 22
+                },
+                {
+                    "name": "Augmented Artillery Range",
+                    "abbreviation": "AAR",
+                    "cost": 30
+                },
+                {
+                    "name": "not applicable",
+                    "abbreviation": "N",
+                    "cost": 0
+                }
+            ]
+        },
+        {
+            "damage_costs":
+            [
+                {
+                    "damage": 8,
+                    "cost": 1
+                },
+                {
+                    "damage": 9,
+                    "cost": 2
+                },
+                {
+                    "damage": 10,
+                    "cost": 4
+                },
+                {
+                    "damage": 11,
+                    "cost": 6
+                },
+                {
+                    "damage": 12,
+                    "cost": 10
+                },
+                {
+                    "damage": 13,
+                    "cost": 10
+                },
+                {
+                    "damage": 14,
+                    "cost": 12
+                },
+                {
+                    "damage": 15,
+                    "cost": 14
+                },
+                {
+                    "damage": 16,
+                    "cost": 16
+                },
+                {
+                    "damage": 17,
+                    "cost": 18
+                },
+                {
+                    "damage": 18,
+                    "cost": 20
+                }
+            ]
+        },
+        {
+            "attack_types":
+            [
+                {
+                    "name": "Standard",
+                    "cost": "DEPENDENT",
+                    "cost_details":
+                    {
+                        "dependency": "ranges = CQ",
+                        "dependency_true" : 1,
+                        "dependency_false": 2.5
+                    }
+                },
+                {
+                    "name": "Quick",
+                    "cost": "DEPENDENT",
+                    "cost_details":
+                    {
+                        "dependency": "range = CQ",
+                        "dependency_true" : 2,
+                        "dependency_false": 5
+                    }
+                },
+                {
+                    "name": "Manual",
+                    "cost": "TOLD"
+                },
+                {
+                    "name": "Burst",
+                    "cost": "TOLD"
+                },
+                {
+                    "name": "Automatic",
+                    "cost": "TOLD"
+                }
+            ]
+        },
+        {
+            "special_rules":
+            [
+                {
+                    "name": "Thrown",
+                    "cost": "DEPENDENT",
+                    "cost_details":
+                    {
+                        "dependency": "range = N",
+                        "dependency_true": "SPECIAL",
+                        "special_rule": "DIVIDE_COST_BY_FOUR",
+                        "dependency_false": 0
+                    }
+                },
+                {
+                    "name": "Ammo",
+                    "cost": "TOLD"
+                },
+                {
+                    "name": "X-Handed",
+                    "cost": 0
+                },
+                {
+                    "name": "OPTIONS",
+                    "cost": "SPECIAL",
+                    "special_rule": "COST_ONE_PER_OPTION"
+                },
+                {
+                    "name": "Bayonet",
+                    "cost": 4
+                },
+                {
+                    "name": "Long Reload",
+                    "cost": -4
+                },
+                {
+                    "name": "Team Loaded",
+                    "cost": -3
+                },
+                {
+                    "name": "Accurate",
+                    "cost": "CALCULATION",
+                    "cost_details":
+                    {
+                        "base_cost": 5,
+                        "told": true,
+                        "calculation_format": "base_cost * told"
+                    }
+                },
+                {
+                    "name": "Aim",
+                    "cost": 6
+                },
+                {
+                    "name": "Explosive",
+                    "cost": "CALCULATION",
+                    "cost_detauls":
+                    {
+                        "base_cost": 8,
+                        "told": true,
+                        "calculation_format": "base_cost + 2 * told"
+                    }
+                },
+                {
+                    "name": "Overwatch",
+                    "cost": 10
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<GridPane xmlns="http://javafx.com/javafx/8.0.171"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="allesekar.MenuController"
+          alignment="CENTER"
+          hgap="10"
+          vgap="10">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="50" />
+        <ColumnConstraints percentWidth="50" />
+    </columnConstraints>
+    
+    <rowConstraints>
+        <RowConstraints percentHeight="20" />
+        <RowConstraints percentHeight="50" />
+    </rowConstraints>
+    <children>
+        <Label text="Cost Calculator" alignment="CENTER" styleClass="title" GridPane.columnSpan="2"/>
+
+        <VBox GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <Button text="Unit Cards" onAction="#toUnitCards" VBox.vgrow="ALWAYS" maxWidth="Infinity" maxHeight="Infinity"/>
+            <Button text="Armour Cards" onAction="#toArmourCards" VBox.vgrow="ALWAYS" maxWidth="Infinity" maxHeight="Infinity"/>
+        </VBox>
+
+        <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button text="Weapon Cards" onAction="#toWeaponCards" VBox.vgrow="ALWAYS" maxWidth="Infinity" maxHeight="Infinity"/>
+            <Button text="fourth button for spacing" VBox.vgrow="ALWAYS" maxWidth="Infinity" maxHeight="Infinity"/>
+        </VBox>
+    </children>
+</GridPane>

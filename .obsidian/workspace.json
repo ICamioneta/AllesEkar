@@ -8,30 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "951783838f6cc1a8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "af5fdecf49a9d467",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Maths.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "4de9b8450baa79e1",
             "type": "leaf",
             "state": {
@@ -49,14 +25,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Allesfezs Ekarschubi.md",
+                "file": "Inbuilt Units.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -102,11 +77,13 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "50cfdc207b8aeaea",
@@ -171,7 +148,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,16 +161,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9e23f8043d07d250",
+  "active": "4de9b8450baa79e1",
   "lastOpenFiles": [
+    "AllesTools/tools/target/classes/allesekar/jsonHandler$WeaponCard.class",
+    "AllesTools/tools/target/jartmp15118889658941143280.tmp",
+    "AllesTools/tools/target/tools-0.1.0.jar",
+    "AllesTools/tools/target/maven-archiver/pom.properties",
+    "AllesTools/tools/target/maven-archiver",
+    "AllesTools/tools/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst",
+    "AllesTools/tools/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst",
+    "AllesTools/tools/target/classes/allesekar/App.class",
+    "AllesTools/tools/target/classes/allesekar/WeaponCardsController.class",
+    "AllesTools/tools/target/classes/allesekar/MenuController.class",
+    "AllesTools/tools/target/classes/allesekar/jsonHandler.class",
     "Inbuilt Units.md",
-    "README.md",
     "Allesfezs Ekarschubi.md",
-    "~$built units.docx",
-    "~$Rules.docx",
+    "Pasted image 20240414173258.png",
+    "README.md",
     "Maths.md",
-    "~$maths.docx",
-    "Discususun.md",
-    "~$scususun.docx"
+    "Discususun.md"
   ]
 }

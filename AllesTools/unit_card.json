@@ -1,0 +1,176 @@
+{
+    "unit_card": 
+    [
+        {
+            "attribute_costs":
+            [
+                {
+                    "score": 17,
+                    "cost": 0,
+                    "cumulative_cost": 0
+                },
+                {
+                    "score": 16,
+                    "cost": 1,
+                    "cumulative_cost": 1
+                },
+                {
+                    "score": 15,
+                    "cost": 1,
+                    "cumulative_cost": 2
+                },
+                {
+                    "score": 14,
+                    "cost": 2,
+                    "cumulative_cost": 4
+                },
+                {
+                    "score": 13,
+                    "cost": 4,
+                    "cumulative_cost": 8
+                },
+                {
+                    "score": 12,
+                    "cost": 8,
+                    "cumulative_cost": 16
+                },
+                {
+                    "score": 11,
+                    "cost": 14,
+                    "cumulative_cost": 30
+                },
+                {
+                    "score": 10,
+                    "cost": 20,
+                    "cumulative_cost": 50
+                },
+                {
+                    "score": 9,
+                    "cost": 30,
+                    "cumulative_cost": 80
+                }
+            ]
+
+        },
+        {
+            "aptitude_costs":
+            [
+                {
+                    "mod": 0,
+                    "cost": 0,
+                    "cumulative_cost": 0,
+                    "min_attribute": null
+                },
+                {
+                    "mod": 2,
+                    "cost": 4,
+                    "cumulative_cost": 4,
+                    "min_attribute": 14
+                },
+                {
+                    "mod": 4,
+                    "cost": 6,
+                    "cumulative_cost": 10,
+                    "min_attribute": 13
+                },
+                {
+                    "mod": 6,
+                    "cost": 8,
+                    "cumulative_cost": 18,
+                    "min_attribute": 13
+                },
+                {
+                    "mod": 8,
+                    "cost": 12,
+                    "cumulative_cost": 30,
+                    "min_attribute": 12
+                },
+                {
+                    "mod": 10,
+                    "cost": 15,
+                    "cumulative_cost": 45,
+                    "min_attribute": 12
+                }
+            ]
+        },
+        {
+            "skills":
+            [
+                {
+                    "name": "One-Handed Striking",
+                    "type": "Weapon"
+                },
+                
+                {
+                    "name": "Finesse Stabbing",
+                    "type": "Weapon"
+                },
+                {
+                    "name": "Hooking",
+                    "type": "Weapon"
+                },
+                {
+                    "name": "Two-Handed Striking",
+                    "type": "Weapon"
+                },
+                {
+                    "name": "Polearm",
+                    "type": "Weapon"
+                },
+                {
+                    "name": "Contact",
+                    "type": "Weapon"
+                },
+                {
+                    "name": "Whips",
+                    "type": "Weapon"
+                },
+                {
+                    "name": "Thrown",
+                    "type": "Weapon"
+                },
+                {
+                    "name": "Bows",
+                    "type": "Weapon"
+                },
+                {
+                    "name": "Firearm",
+                    "type": "Weapon"
+                },
+                {
+                    "name": "Advanced Firearm",
+                    "type": "Weapon"
+                },
+                {
+                    "name": "Artillery",
+                    "type": "Weapon"
+                },
+                {
+                    "name": "Improvised",
+                    "type": "Weapon"
+                },
+                {
+                    "name": "Interfacing",
+                    "type": "Basic"
+                },
+                {
+                    "name": "Agility",
+                    "type": "Basic"
+                },
+                {
+                    "name": "Resolve",
+                    "type": "Basic"
+                },
+                {
+                    "name": "Piloting",
+                    "type": "Basic"
+                },
+                {
+                    "name": "Magic",
+                    "type": "Basic"
+                }
+            ]
+        }
+
+    ]
+}

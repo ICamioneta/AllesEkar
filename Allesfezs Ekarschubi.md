@@ -17,23 +17,23 @@ A unit is the core element of the game. Units have profiles that define their at
 ### The Unit Profile
 Most unit profiles are represented quite simply by a table.
 
-|   |   |   |   |   |   |   |   |   |
-|---|---|---|---|---|---|---|---|---|
-|Polish Winged Hussar (17th century)|   |   |   |   |   |   |   |   |
-|MOT|PHY|WIL|STR|MOV|WSCC|WSCR|ARM|REC|
-|10|10|11|1|5”|+6|n/a|?|2|
-|One Handed Striking (+6), Lance (+6), Pilot (+6), Agility (+4)|   |   |   |   |   |   |   |   |
-|Equipment: Sword, Lance, Metal Armour, Horse|   |   |   |   |   |   |   |   |
+**Polish Winged Hussar (17th century)**
+
+| MOT                                          | PHY | WIL | STR | MOV | WSCC | WSCR | ARM | REC |
+| -------------------------------------------- | --- | --- | --- | --- | ---- | ---- | --- | --- |
+| 10                                           | 10  | 11  | 1   | 5”  | +6   | n/a  | ?   | 2   |
+**skills:** One Handed Striking (+6), Lance (+6), Pilot (+6), Agility (+4)
+**Equipment:** Sword, Lance, Metal Armour, Horse
 
 The first line is the unit’s title. This should be unique, but given the nature of the game this might not be possible.
 
-The next line is a proper table of 9 attributes. These are described later.
+The next line is a table of 9 attributes. These are described later.
 
 The next line is where the skills go. These are written, and then their aptitude is placed in brackets afterwards.
 
-Equipment comes after that, where each item of equipment is specified. There are lists of equipment later in the rules that you can refer to. Many units have variable equipment. This is represented as a choice within square brackets separated by a line. For example, \[Sword | Spear | Poleaxe\]. If it makes sense, like if its on the model, more than one of these may be equipped for example a medieval knight wielding a polearm with a sheathed sword.
+Equipment comes after that, where each item of equipment is specified. There are lists of equipment later in the rules that you can refer to. Many units have variable equipment. This is represented as a choice within square brackets separated by a line. For example, \[Sword | Spear | Poleaxe\]. More than one of these may be equipped for example a medieval knight wielding a polearm with a sheathed sword.
 
-Quite often, units have access to some kind of magic equivalent. This usually comes on a line after the equipment and should be intuitive to read.
+Quite often, units have access to some kind of magic equivalent. This usually comes on a line after the equipment and should be intuitive to read. Other sections of the profile go after the equipment too.
 ### Vehicles
 Vehicles and their profiles are split into seats. Each seat enables a certain component of the vehicle. The most common is the driver seat, which always enables the Move of a vehicle. Vehicles also often have weapons. Each seat will activate different weaponry.
 ## Attributes
@@ -158,9 +158,6 @@ Some weapons are used in a unique way. These belong to their own weapon skill cl
 - Resolve. This is used when making pressure tests.
 - Piloting. This is used when performing vehicle actions.
 - Magic. Magic in this game encapsulates a large range of magic-like things.
-### special skills
-Special skills are skills with their own rules.
-- Teleports. This unit does not provoke reactions while moving
 
 ## Magic
 
@@ -304,7 +301,9 @@ The first weapon profile here is the unarmed strike. All units have access to th
 | Marksman Rifle (121pt)    | LR       | Bullet 18 | Standard | Firearm     | Ammo (20)                                |
 | PDW (101pt)               | SR       | Bullet 15 | Quick    | Firearm     |                                          |
 | Sniper Rifle (83pt)       | LR       | Bullet 22 | Manual 1 | Firearm     | Ammo (5), Accurate (+4), Overwatch, Aim. |
+| Anti-Materiel Rifle       | AMR      | Pierce 25 | Manual 1 | Firearm     | Ammo (1), Accurate (+4),                 |
 | Frag Grenade (11pt)       | -        | Pierce 20 | -        | Thrown      | Thrown, Explosive (6”)                   |
+| Heavy Pistol (83pt)       | SR       | Bullet 18 | Standard | Firearm     | Ammo (6)                                 |
 
 
 ### Special rules
@@ -321,6 +320,7 @@ As seen on the weapons table, here are the rules that each weapon may include in
 - Accurate. These weapons are accurate to no fault if the user can wield them proficiently. Accurate weapons give a specified modifier to the hit rolls of attacks made with them if the user is proficient with weapons of this skill class. Cost: 5\*told
 - Aim. These weapons benefit from taking the time to aim with them. If the user used the idle movement action this turn, any attacks made with this weapon gain a +2 modifier to hit. During reactive shoots, this weapon always gets a +2 modifier to hit. Cost: 6
 - Explosive. These weapons explode. Any unit within the specified number of inches to the target are hit by this weapon, but the damage is halved for these secondary hits. Cost: 8+2\*told
+- Overwatch. These weapons are effective when used in response to enemy movements. If the attack was a reaction, it gets a +4 modifier to hit. Cost: 10
 
 Prehistoric
 
@@ -342,16 +342,18 @@ Futuristic
 
 ## Armour
 
-| Name                  | Armour Value             | Rules |
-| --------------------- | ------------------------ | ----- |
-| Leather Armour (6 pt) | 3                        |       |
-| Metal Armour (11 pt)  | 5 / slash 7 / pierce 7   |       |
-| Full Plate (15pt)     | 6 / slash 10 / pierce 10 |       |
-| Anti-Bullet Shirt     | 0 /                      |       |
-| Kevlar Vest (11pt)    | 4 / slash 6 / bullet 12  |       |
+| Name                   | Armour Value             | Rules              |
+| ---------------------- | ------------------------ | ------------------ |
+| Leather Armour (6 pt)  | 3                        |                    |
+| Metal Armour (11 pt)   | 5 / slash 7 / pierce 7   |                    |
+| Full Plate (15pt)      | 6 / slash 10 / pierce 10 |                    |
+| Kevlar Vest (11pt)     | 4 / slash 6 / bullet 12  |                    |
+| Spartan Armour (172pt) | 15                       | Energy Shield (25) |
 
 ### Armour Value
 For an armour to have resistances and weaknesses to damage types, it means that the armour value is different for those specified damage types. Resistances and weaknesses are specified by noting the damage type it is resistant to, as well as the new armour value, in the armour value section. On a unit’s profile, the abbreviations will probably be used alongside the armour value for that damage type.
+### Special Rules
+- Energy Shield. These armours have a first layer of defence as an energy shield. While the energy shield is up, this armour has the armour specified in the energy shield's told value. The energy shield goes down if, in a single turn, it absorbs more damage than the told value. Energy shields go up at the start of each turn. Plasma weapons  Cost - told value as armour \* 0.80
 ## Other equipment
 Shield. Shields provide a +4 bonus when blocking. To have a shield equipped, a unit must be able to realistically use it. For example, weapons that use two hands like longswords cannot use shields as well, as there is no hand for the shield.
 # Vehicles
@@ -457,9 +459,9 @@ The cost of weaponry is evaluated left to right. You multiply the range + damage
 | **Damage Type** | **Cost** |
 | --------------- | -------- |
 | **Slash**       | 0        |
-| **crush**       | 0        |
-| **pierce**      | 0        |
-| **bullet**      | 6        |
+| **Crush**       | 0        |
+| **Pierce**      | 0        |
+| **Bullet**      | 6        |
 | **AP**          | 10       |
 | **Laser**       | 8        |
 | **Plasma**      | 12       |
@@ -500,12 +502,11 @@ The cost of weaponry is evaluated left to right. You multiply the range + damage
 ## Armour Costs
 I cannot think of a good way of point costing armour, so if you want to make other armours just feel for it, I’m sure it’ll be okay. Or, you could just not make that armour type. Heres a table that kinda works. A lot of the armours I designed are not fully optimised for these costs, so don’t you dare make slightly more optimised armours. Importantly, if you’re using this system, you should probably have all of 5 before moving on to 6+.
 
-|   |   |   |   |   |   |   |   |   |
-|---|---|---|---|---|---|---|---|---|
-|**Point**|**Slash**|**Crush**|**Pierce**|**Bullet**|**AP**|**Laser**|**Plasma**|**Total**|
-|**0-5**|1/6|1/6|1/6|1/6|1|1/6|1/6|2 (10)|
-|**6-10**|0.25|0.25|0.25|0.25|1|0.5|0.5|3 (35)|
-|**11-15**|0.5|0.5|0.5|0.5|2|0.5|0.5|5 (60)|
-|**16-20**|0.75|0.75|0.75|0.75|2|1|1|7 (95)|
-|**20-30**|1|1|1|1|3|1|1|9 (140)|
-|**30+**|1.25|1.25|1.25|1.25|3|1.5|1.5|11|
+| **Point** | **Slash** | **Crush** | **Pierce** | **Bullet** | **AP** | **Laser** | **Plasma** | **Total** |
+| --------- | --------- | --------- | ---------- | ---------- | ------ | --------- | ---------- | --------- |
+| **0-5**   | 1/6       | 1/6       | 1/6        | 1/6        | 1      | 1/6       | 1/6        | 2 (10)    |
+| **6-10**  | 0.25      | 0.25      | 0.25       | 0.25       | 1      | 0.5       | 0.5        | 3 (35)    |
+| **11-15** | 0.5       | 0.5       | 0.5        | 0.5        | 2      | 0.5       | 0.5        | 5 (60)    |
+| **16-20** | 0.75      | 0.75      | 0.75       | 0.75       | 2      | 1         | 1          | 7 (95)    |
+| **20-30** | 1         | 1         | 1          | 1          | 3      | 1         | 1          | 9 (140)   |
+| **30+**   | 1.25      | 1.25      | 1.25       | 1.25       | 3      | 1.5       | 1.5        | 11        |
