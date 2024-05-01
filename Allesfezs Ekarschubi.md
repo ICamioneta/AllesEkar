@@ -267,6 +267,8 @@ The first weapon profile here is the unarmed strike. All units have access to th
 | Club (1pt)                | CQ       | Crush 8   | Standard | OHS         |                                          |
 | Pointy Stick (1pt)        | CQ       | Pierce 8  | Standard | THS         |                                          |
 | Javelin (4pt)             | CQ       | Pierce 10 | Standard | Thrown      | Thrown                                   |
+| Knife                     | CQ       | Pierce 10 | Standard | Contact     | Thrown                                   |
+| Throwing Knife            | -        | Pierce 10 | -        | Thrown      | Thrown                                   |
 |                           |          |           |          |             |                                          |
 | Medieval                  |          |           |          |             |                                          |
 | Sword (8pt)               | CQ       | Slash 12  | Standard | OHS         |                                          |
@@ -304,6 +306,9 @@ The first weapon profile here is the unarmed strike. All units have access to th
 | Anti-Materiel Rifle       | AMR      | Pierce 25 | Manual 1 | Firearm     | Ammo (1), Accurate (+4),                 |
 | Frag Grenade (11pt)       | -        | Pierce 20 | -        | Thrown      | Thrown, Explosive (6”)                   |
 | Heavy Pistol (83pt)       | SR       | Bullet 18 | Standard | Firearm     | Ammo (6)                                 |
+|                           |          |           |          |             |                                          |
+| Future                    |          |           |          |             |                                          |
+| Arm Blades                | CQ       | Slash 13  | Standard | Contact     |                                          |
 
 
 ### Special rules
@@ -371,7 +376,6 @@ The gunner seat specifies which guns it makes available.
 
 Vehicles have common attributes.
 
-Clad means that the vehicle is hard to see out of. If a seat with the spotter attribute isn’t occupied, all actions targeting another unit have a -4 modifier to their skill check rolls.
 
 Manual Loading attaches to specific weapons of the vehicle, usually tank guns. If a seat with the loader attribute isn’t occupied, weapons with manual loading have Long Reload
 
@@ -385,7 +389,11 @@ To pilot a vehicle, a unit makes the interface action targeting the vehicle.
 | Seats: Driver, Gunner (Early tank cannon, Machine gun), Loader (Spotter, Loader) |            |     |
 | Attributes: Clad                                                                 |            |     |
 | Weapons: Machine Gun (170pt), Early tank cannon (106pt)                          |            |     |
-
+## Vehicle Attributes
+- Clad. This vehicle is hard to see out of. If a seat with the spotter attribute isn't occupied, all actions targeting other units have a -4 modifier to their skill check rolls.
+- Exposed. This seat on the vehicle isn't behind any form of armour. Actions can target the model occupying this seat. Any actions that would forcefully move the model from the seat cause this model to exit the vehicle.
+- Replenishes x. This vehicle has a large stockpile of the selected limited weapon.
+- Hovering. This vehicle is flying just from the ground's surface. It does not set of mines, and characters cannot come into base to base contact with it.
 # Actions
 On your turn, you activate each of your units in an order of your choice. During a unit’s activation, you can either use a full action, or a movement action and a second action.
 ## Movement Actions
