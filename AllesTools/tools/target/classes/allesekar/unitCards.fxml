@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<GridPane xmlns="http://javafx.com/javafx/8.0.171"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="allesekar.MenuController"
+          alignment="CENTER"
+          hgap="10"
+          vgap="10">
+
+    <children>
+        <Label text="Unit Cards" alignment="CENTER" styleClass="title" GridPane.columnSpan="2"/>
+
+        <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="nameTextField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="Variant:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="variantTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <!-- Add more fields for other attributes -->
+                <Label text="Skills:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <ListView fx:id="skillsListView" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Equipment:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <ListView fx:id="equipmentListView" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+    </children>
+</GridPane>

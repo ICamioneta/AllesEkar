@@ -34,6 +34,24 @@ The next line is where the skills go. These are written, and then their aptitude
 Equipment comes after that, where each item of equipment is specified. There are lists of equipment later in the rules that you can refer to. Many units have variable equipment. This is represented as a choice within square brackets separated by a line. For example, \[Sword | Spear | Poleaxe\]. More than one of these may be equipped for example a medieval knight wielding a polearm with a sheathed sword.
 
 Quite often, units have access to some kind of magic equivalent. This usually comes on a line after the equipment and should be intuitive to read. Other sections of the profile go after the equipment too.
+### Teams
+Teams are a special type of unit. They are a number of identical models acting as one body. For most purposes, these models act like a normal unit, all being activated at once, moving together, and making rolls as a single body. Some rolls and checks will have some models succeed and some models fail. These rolls are called **distribution rolls**
+#### Distribution Rolls
+As of now, distribution rolls are made when making attacks and trying to save against armour. 
+First, you normally calculate the success value, and roll your d20 normally. Generally, if you succeed this most of your models will succeed the roll, but some will still fail. The opposite is also true.
+Distribution rolls offer a way for teams to act out rolling individual d20s without actually doing so. Instead, the normal d20 is rolled alongside two *distribution dice*, distribution dice are a special kind of five-sided dice with the sides -4, -2, 0, +2, +4. You can simulate distribution dice with d5s by converting the added score with 2r-6, where r is the roll. You can simulate d5s by rolling d10s and halving, or rolling d6s and rerolling 6s. 
+There are four main values used in distribution roll calculations - and most calculations are additions so don't worry too much.
+- r - your team roll, the d20 you rolled to represent the team's roll.
+- s - the success value
+- d - the distribution dice score, the two distribution dice added up
+- b - the buffer, calculated by s - r
+- f - the distributed success value, calculated b + d
+- m - the number of models that succeed anyway (+) or fail anyway (-), calculated depending on your team size n with n/10 * f. 
+So to go through the chain of events and calculations you need to do when you make a distribution roll:
+1. Calculate the buffer b with s - r
+2. Calculate the distributed success value f with b + d
+3. Calculate the number of models that fail/succeed despite the team roll. Round the number of models in the team to the nearest 5, then do n/10 * f to find the number of models that succeed anyway (if its positive) or fail anyway (if its negative).
+If you want to understand the mathematics behind distribution rolls and why they are done, look at the maths document.
 ### Vehicles
 Vehicles and their profiles are split into seats. Each seat enables a certain component of the vehicle. The most common is the driver seat, which always enables the Move of a vehicle. Vehicles also often have weapons. Each seat will activate different weaponry.
 ## Attributes
@@ -235,13 +253,13 @@ In this table, T stands for told.
 
 You may choose not to use range bands, which will remove both positive and negative modifiers from the game. If you do this, weapons still cannot fire beyond their maximum range as specified in the range bands.
 
-Damage is sometimes weapon-specific, but certain damage types carry effects that interact with armour.
-
+Damage is weapon specific, with melee weapons often providing bonuses for a unit's PH rather than a flat damage rate. 
+There are also damage types which are separated into two categories: simple and advanced. the only difference between these two categories is how much they cost, and how easy they are to defend against (how much armour against them costs). Slash, crush, and pierce are simple, and the others are advanced.
 - Slash weapons deal their damage by cutting the target.
 - Crush weapons deal damage by breaking things using often concentrated force.
 - Pierce weapons cut holes in targets.
-- Bullet weapons fire small projectiles at extreme speeds. Bullet damage type ignores three points of armour automatically.
-- Armour Piercing (AP) weapons fire specialised projectiles designed to pierce tough armour, as well as special melee weapons that achieve the same thing. AP damage type ignores five points of armour automatically.
+- Bullet weapons fire small projectiles at extreme speeds.
+- Armour Piercing (AP) weapons fire specialised projectiles designed to pierce tough armour, as well as special melee weapons that achieve the same thing. 
 - Laser weapons use concentrated energy beams.
 - Plasma weapons use superheated projectiles.
 
@@ -254,61 +272,60 @@ Attacks are similarly handled into classes.
 - Automatic. The number of attacks you get is specified.
 
 ### Weapon Profile Table
-
-The first weapon profile here is the unarmed strike. All units have access to this, and it is not specified in equipment. **The unarmed strike deals 20-PHY crush damage**, where phy is the unit’s physique score.
+For melee attacks, it is common for the unit's physique to be factored into the damage score. Because lower PHY scores are better, but higher damage is better, the base melee damage, or M, is 20-PHY of a unit. If a unit's PHY is 14, then their melee damage M is 6
 
 **EXPLANATION:** The shotgun has 5 damage, which doesn’t have its own points cost thingy. Following the pattern, 5 damage should cost -6 points but I cant have negative costs for things like that. The Shotgun is a specially engineered gun to be just as effective as the Repeater in its own range band, so I’ve done the cost as if 5 damage costs nothing. Any new weapons cant do this.
 
-| Name                      | Range    | Damage    | Attacks  | Skill Class | Special rules                            |
-| ------------------------- | -------- | --------- | -------- | ----------- | ---------------------------------------- |
-| Unarmed Strike            | CQ       | *         | Standard | Contact     | *Deals 20-PHY crush damage               |
-|                           |          |           |          |             |                                          |
-| Ancient                   |          |           |          |             |                                          |
-| Club (1pt)                | CQ       | Crush 8   | Standard | OHS         |                                          |
-| Pointy Stick (1pt)        | CQ       | Pierce 8  | Standard | THS         |                                          |
-| Javelin (4pt)             | CQ       | Pierce 10 | Standard | Thrown      | Thrown                                   |
-| Knife                     | CQ       | Pierce 10 | Standard | Contact     | Thrown                                   |
-| Throwing Knife            | -        | Pierce 10 | -        | Thrown      | Thrown                                   |
-|                           |          |           |          |             |                                          |
-| Medieval                  |          |           |          |             |                                          |
-| Sword (8pt)               | CQ       | Slash 12  | Standard | OHS         |                                          |
-| Longsword (12pt)          | CQ       | Slash 14  | Standard | THS         | Two-Handed                               |
-| Spear (8pt)               | CQ       | Pierce 12 | Standard | Finesse     |                                          |
-|                           |          |           |          |             |                                          |
-| Bow (17pt)                | MR       | Pierce 12 | Manual 1 | Bows        | Ammo (1)                                 |
-|                           |          |           |          |             |                                          |
-| Chivalric                 |          |           |          |             |                                          |
-| Poleaxe (15pt)            | CQ       | S/C/P 14  | Standard | THS         | Two-Handed, options                      |
-|                           |          |           |          |             |                                          |
-| Renaissance               |          |           |          |             |                                          |
-| Musket (29pt)             | MR       | Bullet 15 | Manual 1 | Firearm     | Ammo (1), Long reload, Bayonet           |
-| Flintlock Pistol (20pt)   | SR       | Bullet 14 | Manual 1 | Firearm     | Ammo (1), Long reload                    |
-|                           |          |           |          |             |                                          |
-| Industrial                |          |           |          |             |                                          |
-| Bolt-Action Rifle (39pt)  | MR       | Bullet 18 | Manual 1 | Firearm     | Ammo (1), Bayonet                        |
-| Repeater (62pt)           | MR       | Bullet 16 | Manual 2 | Firearm     | Ammo (8)                                 |
-| Shotgun (58pt)            | SR       | Bullet 5  | Burst 8  | Firearm     | Ammo (4)                                 |
-| Revolver (33pt)           | SR       | Bullet 16 | Manual 1 | Firearm     | Ammo (6)                                 |
-| Pistol (51pt)             | SR       | Bullet 15 | Manual 2 | Firearm     | Ammo (12)                                |
-| Rifle (88pt)              | MR       | Bullet 18 | Standard | Firearm     | Ammo (8), Bayonet                        |
-| Machine Gun (176pt)       | AMR (+2) | Bullet 18 | Quick    | Firearm     |                                          |
-| SMG (74pt)                | SR       | Bullet 15 | Standard | Firearm     | Ammo (20)                                |
-| Scoped Rifle (60pt)       | AMR (+2) | Bullet 17 | Manual 1 | Firearm     | Ammo (4), Accurate (+2), Aim             |
-| Hand Grenade (8pt)        | -        | Pierce 16 | -        | Thrown      | Thrown, Explosive (4”)                   |
-|                           |          |           |          |             |                                          |
-| Early Tank Cannon (106pt) | AMR (+2) | AP 38     | Manual 1 | Firearm     | Ammo 1, Team Loaded, Explosive (4”), Aim |
-|                           |          |           |          |             |                                          |
-| Modern                    |          |           |          |             |                                          |
-| Assault Rifle (116pt)     | AMR (+2) | Bullet 18 | Standard | Firearm     | Ammo (20)                                |
-| Marksman Rifle (121pt)    | LR       | Bullet 18 | Standard | Firearm     | Ammo (20)                                |
-| PDW (101pt)               | SR       | Bullet 15 | Quick    | Firearm     |                                          |
-| Sniper Rifle (83pt)       | LR       | Bullet 22 | Manual 1 | Firearm     | Ammo (5), Accurate (+4), Overwatch, Aim. |
-| Anti-Materiel Rifle       | AMR      | Pierce 25 | Manual 1 | Firearm     | Ammo (1), Accurate (+4),                 |
-| Frag Grenade (11pt)       | -        | Pierce 20 | -        | Thrown      | Thrown, Explosive (6”)                   |
-| Heavy Pistol (83pt)       | SR       | Bullet 18 | Standard | Firearm     | Ammo (6)                                 |
-|                           |          |           |          |             |                                          |
-| Future                    |          |           |          |             |                                          |
-| Arm Blades                | CQ       | Slash 13  | Standard | Contact     |                                          |
+| Name                | Range    | Damage     | Attacks  | Skill Class | Special rules                            |
+| ------------------- | -------- | ---------- | -------- | ----------- | ---------------------------------------- |
+| Unarmed Strike      | CQ       | M          | Standard | Contact     |                                          |
+|                     |          |            |          |             |                                          |
+| Ancient             |          |            |          |             |                                          |
+| Club                | CQ       | Crush M+2  | Standard | OHS         |                                          |
+| Pointy Stick        | CQ       | Pierce M+2 | Standard | THS         |                                          |
+| Javelin             | CQ       | Pierce M+4 | Standard | Thrown      | Thrown                                   |
+| Knife               | CQ       | Pierce M+4 | Standard | Contact     | Thrown                                   |
+| Throwing Knife      | -        | Pierce M+4 | -        | Thrown      | Thrown                                   |
+|                     |          |            |          |             |                                          |
+| Medieval            |          |            |          |             |                                          |
+| Sword               | CQ       | Slash M+6  | Standard | OHS         |                                          |
+| Longsword           | CQ       | Slash M+8  | Standard | THS         | Two-Handed                               |
+| Spear               | CQ       | Pierce M+6 | Standard | Finesse     |                                          |
+|                     |          |            |          |             |                                          |
+| Bow                 | MR       | Pierce M+6 | Manual 1 | Bows        | Ammo (1)                                 |
+|                     |          |            |          |             |                                          |
+| Chivalric           |          |            |          |             |                                          |
+| Poleaxe             | CQ       | S/C/P M+8  | Standard | THS         | Two-Handed, options                      |
+|                     |          |            |          |             |                                          |
+| Renaissance         |          |            |          |             |                                          |
+| Musket              | MR       | Bullet 15  | Manual 1 | Firearm     | Ammo (1), Long reload, Bayonet           |
+| Flintlock Pistol    | SR       | Bullet 14  | Manual 1 | Firearm     | Ammo (1), Long reload                    |
+|                     |          |            |          |             |                                          |
+| Industrial          |          |            |          |             |                                          |
+| Bolt-Action Rifle   | MR       | Bullet 18  | Manual 1 | Firearm     | Ammo (1), Bayonet                        |
+| Repeater            | MR       | Bullet 16  | Manual 2 | Firearm     | Ammo (8)                                 |
+| Shotgun             | SR       | Bullet 5   | Burst 8  | Firearm     | Ammo (4)                                 |
+| Revolver            | SR       | Bullet 16  | Manual 1 | Firearm     | Ammo (6)                                 |
+| Pistol              | SR       | Bullet 15  | Manual 2 | Firearm     | Ammo (12)                                |
+| Rifle               | MR       | Bullet 18  | Standard | Firearm     | Ammo (8), Bayonet                        |
+| Machine Gun         | AMR (+2) | Bullet 18  | Quick    | Firearm     |                                          |
+| SMG                 | SR       | Bullet 15  | Standard | Firearm     | Ammo (20)                                |
+| Scoped Rifle        | AMR (+2) | Bullet 17  | Manual 1 | Firearm     | Ammo (4), Accurate (+2), Aim             |
+| Hand Grenade        | -        | Pierce 16  | -        | Thrown      | Thrown, Explosive (4”)                   |
+|                     |          |            |          |             |                                          |
+| Early Tank Cannon   | AMR (+2) | AP 38      | Manual 1 | Firearm     | Ammo 1, Team Loaded, Explosive (4”), Aim |
+|                     |          |            |          |             |                                          |
+| Modern              |          |            |          |             |                                          |
+| Assault Rifle       | AMR (+2) | Bullet 18  | Standard | Firearm     | Ammo (20)                                |
+| Marksman Rifle      | LR       | Bullet 18  | Standard | Firearm     | Ammo (20)                                |
+| PDW                 | SR       | Bullet 15  | Quick    | Firearm     |                                          |
+| Sniper Rifle        | LR       | Bullet 22  | Manual 1 | Firearm     | Ammo (5), Accurate (+4), Overwatch, Aim. |
+| Anti-Materiel Rifle | AMR      | Pierce 25  | Manual 1 | Firearm     | Ammo (1), Accurate (+4),                 |
+| Frag Grenade        | -        | Pierce 20  | -        | Thrown      | Thrown, Explosive (6”)                   |
+| Heavy Pistol        | SR       | Bullet 18  | Standard | Firearm     | Ammo (6)                                 |
+|                     |          |            |          |             |                                          |
+| Future              |          |            |          |             |                                          |
+| Arm Blades          | CQ       | Slash M+ 7 | Standard | Contact     |                                          |
 
 
 ### Special rules
@@ -346,17 +363,30 @@ Modern (1950-2100)
 Futuristic
 
 ## Armour
+Armour is where damage type's complexity really matters. Its a lot easier to protect against a sword's edge than it is the fine supersonic point of a bullet. It also costs a lot more effort to make armour than it does weaponry, further exaggerating  its cost.
 
-| Name                   | Armour Value             | Rules              |
-| ---------------------- | ------------------------ | ------------------ |
-| Leather Armour (6 pt)  | 3                        |                    |
-| Metal Armour (11 pt)   | 5 / slash 7 / pierce 7   |                    |
-| Full Plate (15pt)      | 6 / slash 10 / pierce 10 |                    |
-| Kevlar Vest (11pt)     | 4 / slash 6 / bullet 12  |                    |
-| Spartan Armour (172pt) | 15                       | Energy Shield (25) |
 
 ### Armour Value
-For an armour to have resistances and weaknesses to damage types, it means that the armour value is different for those specified damage types. Resistances and weaknesses are specified by noting the damage type it is resistant to, as well as the new armour value, in the armour value section. On a unit’s profile, the abbreviations will probably be used alongside the armour value for that damage type.
+Armours are often designed to protect against a specific type of weapon. Chainmail is highly effective against slashing damage, but is useless against crushing and not as effective against piercing. Kevlar is designed to withstand bullets, which also gives it about the same effectiveness as stopping slash, pierce, and crush damage.
+Armour values are quite complex, and are split into their component parts. When shown on a table, they are often abbreviated. 
+- S for Slash
+- C for Crush
+- P for Pierce
+- B for Bullet
+- AP for Armour Piercing
+- L for Laser
+- Pl for Plasma
+### Armour Profile Table
+
+| Name              | Slash | Crush | Pierce | AP  | Bullet | Laser | Plasma | Rules |
+| ----------------- | ----- | ----- | ------ | --- | ------ | ----- | ------ | ----- |
+| Leather Armour    | 3     | 3     | 3      | 0   | 0      | 0     | 0      |       |
+| Metal Armour      | 5     | 3     | 5      | 0   | 0      | 0     | 0      |       |
+| Full Plate Armour | 8     | 6     | 8      | 0   | 0      | 0     | 0      |       |
+| Kevlar Vest       | 4     | 2     | 4      | 1   | 5      | 0     | 0      |       |
+
+
+
 ### Special Rules
 - Energy Shield. These armours have a first layer of defence as an energy shield. While the energy shield is up, this armour has the armour specified in the energy shield's told value. The energy shield goes down if, in a single turn, it absorbs more damage than the told value. Energy shields go up at the start of each turn. Plasma weapons  Cost - told value as armour \* 0.80
 ## Other equipment
@@ -385,7 +415,7 @@ To pilot a vehicle, a unit makes the interface action targeting the vehicle.
 | BT-7 (like 300pt or smthn)                                                       |            |     |
 | -------------------------------------------------------------------------------- | ---------- | --- |
 | STR                                                                              | ARM (83pt) | MOV |
-| 5                                                                                | 20 / AP 14 | 10” |
+| 5                                                                                | TO DO      | 10” |
 | Seats: Driver, Gunner (Early tank cannon, Machine gun), Loader (Spotter, Loader) |            |     |
 | Attributes: Clad                                                                 |            |     |
 | Weapons: Machine Gun (170pt), Early tank cannon (106pt)                          |            |     |
@@ -431,6 +461,9 @@ This acts identically to the action Block.
 # Points Cost
 In Allesfezs Ekarschubi, unit’s point cost is calculated as a sum of their attributes and skills and their equipment. This system should in theory balance every unit out and their points cost, leaving the balance of the game up to strategy and outside factors. Changing the points cost of Allesfezs is one of the main common changes that should happen to control how powerful certain options are. When creating your own unit profile, you should add what your model should have rather than whatever you want.
 This section consists of tables, and many of them. In the future, there will be an assisted way to calculate these points cost.
+
+**The main principle of points cost is that 5% is worth 1 point**
+However, different 5% advantages will mean different things, so this is more a general guideline for when I'm lost, or thinking about simple survivorship calculations such as damage.
 ## Unit Card
 The unit card has many costs involved. These are Attributes and Skills. These have a cost to move from one to the other, meaning that the cost of an actual level is the cumulative cost of the skill. For attributes, the minimum a unit can have is 17, and the highest is 9.
 
@@ -462,7 +495,9 @@ Skills have a minimum related attribute. To advance from one to the other, you n
 ## Weaponry
 Weaponry’s calculated cost is here in case you want to make your own weaponry. I will provide the cost of the game’s inbuilt weaponry in this rulebook.
 
-The cost of weaponry is evaluated left to right. You multiply the range + damage cost by the attacks, then you add special rules. Weapons are fixed, so their cost is just the number, no cumulation. Damage is a flat cost. Some damage types have an additional cost added to this value before multiplication. Range is also a flat cost, also multiplied by the attacks. Skill class has no cost. The special rules of weapons have a cost later defined. Close Quarters range costs noting.
+The full formula for a weapon cost is:
+$$\text{weapon cost}=\left(\text{range}+\text{damage}\right)\times\text{attacks}+\text{special rules}$$
+$$\text{damage}=\text{damage value}+\text{damage type}$$
 
 | **Damage Type** | **Cost** |
 | --------------- | -------- |
@@ -484,20 +519,7 @@ The cost of weaponry is evaluated left to right. You multiply the range + damage
 | **AR**      | 22       |
 | **AAR**     | 30       |
 
-
-| **Damage** | **Cost** |
-| ---------- | -------- |
-| **8**      | 1        |
-| **9**      | 2        |
-| **10**     | 4        |
-| **11**     | 6        |
-| **12**     | 8        |
-| **13**     | 10       |
-| **14**     | 12       |
-| **15**     | 14       |
-| **16**     | 16       |
-| **17**     | 18       |
-| **18**     | 20       |
+There is no more damage table. Every point of damage now costs its own weight in damage. The M damage doesn't cost anything.
 
 | **Attacks**     | **Cost**                   |
 | --------------- | -------------------------- |
@@ -508,13 +530,14 @@ The cost of weaponry is evaluated left to right. You multiply the range + damage
 | **Automatic N** | *N                         |
 
 ## Armour Costs
-I cannot think of a good way of point costing armour, so if you want to make other armours just feel for it, I’m sure it’ll be okay. Or, you could just not make that armour type. Heres a table that kinda works. A lot of the armours I designed are not fully optimised for these costs, so don’t you dare make slightly more optimised armours. Importantly, if you’re using this system, you should probably have all of 5 before moving on to 6+.
+Generally speaking, it costs more to make armour impervious to a weapon than it does to make the weapon. For example, plate armour costs a lot more to make than the sword which it deflects. Much like damage points, armour costs are also flat, but they vary between what type of damage its deflecting due to the inherent difficulty of defending against the advanced damage types.
 
-| **Point** | **Slash** | **Crush** | **Pierce** | **Bullet** | **AP** | **Laser** | **Plasma** | **Total** |
-| --------- | --------- | --------- | ---------- | ---------- | ------ | --------- | ---------- | --------- |
-| **0-5**   | 1/6       | 1/6       | 1/6        | 1/6        | 1      | 1/6       | 1/6        | 2 (10)    |
-| **6-10**  | 0.25      | 0.25      | 0.25       | 0.25       | 1      | 0.5       | 0.5        | 3 (35)    |
-| **11-15** | 0.5       | 0.5       | 0.5        | 0.5        | 2      | 0.5       | 0.5        | 5 (60)    |
-| **16-20** | 0.75      | 0.75      | 0.75       | 0.75       | 2      | 1         | 1          | 7 (95)    |
-| **20-30** | 1         | 1         | 1          | 1          | 3      | 1         | 1          | 9 (140)   |
-| **30+**   | 1.25      | 1.25      | 1.25       | 1.25       | 3      | 1.5       | 1.5        | 11        |
+For now, the following damage types cost 1 point per level:
+- Slash 
+- Crush
+- Pierce
+The advanced damage types cost 2 per level:
+- Bullet
+- Laser
+- Plasma
+And AP costs 3 per level.

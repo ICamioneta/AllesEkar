@@ -20,7 +20,7 @@
         <RowConstraints percentHeight="50" />
     </rowConstraints>
     <children>
-        <Label text="Cost Calculator" alignment="CENTER" styleClass="title" GridPane.columnSpan="2"/>
+        <Label text="Allesfezs Ekarschubi Tools" alignment="CENTER" styleClass="title" GridPane.columnSpan="2"/>
 
         <VBox GridPane.columnIndex="0" GridPane.rowIndex="1">
             <Button text="Unit Cards" onAction="#toUnitCards" VBox.vgrow="ALWAYS" maxWidth="Infinity" maxHeight="Infinity"/>
@@ -29,7 +29,7 @@
 
         <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
             <Button text="Weapon Cards" onAction="#toWeaponCards" VBox.vgrow="ALWAYS" maxWidth="Infinity" maxHeight="Infinity"/>
-            <Button text="fourth button for spacing" VBox.vgrow="ALWAYS" maxWidth="Infinity" maxHeight="Infinity"/>
+            <Button text="settings" onAction = "#toSettings" VBox.vgrow="ALWAYS" maxWidth="Infinity" maxHeight="Infinity"/>
         </VBox>
     </children>
 </GridPane>

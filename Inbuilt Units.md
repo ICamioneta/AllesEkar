@@ -20,7 +20,7 @@ Raston Robot Armour: ARM 40.
 | MOT                                                                         | PHY | WIL | STR | MOV | WSCC | WSCR | ARM     | REC |
 | --------------------------------------------------------------------------- | --- | --- | --- | --- | ---- | ---- | ------- | --- |
 | 12                                                                          | 11  | 12  | 1   | 5”  | +6   | n/a  | 6/S9/P9 | 2   |
-**skills:** One Handed Striking (+4), Two Handed Striking (+6), Pilot (+4), Block (+2)
+**skills:** One Handed Striking (+2), Two Handed Striking (+3), Pilot (+2), Block (+1)
 **Equipment:** Sword, \[Poleaxe | Longsword | Spear], Full Plate
 ### Polish Winged Hussar
 **Polish Winged Hussar (17th century)**
@@ -142,3 +142,22 @@ Cooldown (time) describes the number of activations this unit must finish before
 | 10  | 10  | 11  | 1   | 4”  | +4   | +2   | 4   | 2   |
 **skills:** Firearm (+8), Resolve (+10), Interfacing (+10), Contact (+8), Thrown (+4), OHS (+6)
 **Equipment:** Assault Rifle, Heavy Pistol, Spartan Armour
+# MCU
+## Spider Man
+### Green Goblin
+**Green Gobin (Spider Man 2002)**
+
+| MOT | PHY | WIL | STR | MOV | WSCC | WSCR | ARM | REC |
+| --- | --- | --- | --- | --- | ---- | ---- | --- | --- |
+| 12  | 10  | 13  | 1   | 6”  | +4   | +2   | 4   | 2   |
+**skills:** Thrown (+4), Contact (+4)
+**Equipment:** Frag Grenades (3), Arm Blades, Throwing Knives (4), Green Gobin's Armour ()
+
+**Green Goblin's Glider (Spider Man 2002)***
+
+| STR | ARM | MOV |
+| --- | --- | --- |
+| 2   | 0   | 14” |
+**Seats:** Driver (Assault Rifle, Exposed)
+**Attributes:** Hovering, replenishes frag grenades
+**Weapons:** Assault Rifle

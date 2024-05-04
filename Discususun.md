@@ -488,3 +488,88 @@ Real quick, every point of armour reduces the chance of death by 0.0275, and I c
 |13|13|13|1|5”|+2|+2|n/a|2|
 |Firearm (+2), Contact (+2), Improvised (+2), Piloting (+2)|   |   |   |   |   |   |   |   |
 |Equipment: Revolver (27pt), Repeater (48pt)|   |   |   |   |   |   |   |   |
+# Major rebalance patch
+So after playtesting the game a bit, i've realised serious flaws in its balancing, namely that of skills and armour.
+Skills are too good.
+
+First, I'm going to tackle the attribute issues. 
+I'm going to more carefully assess the capabilities of units from Allesfezs main inspiration, Infinity.
+A Ghulam has a BS of 11 and a CC of 14. Since you need to roll lower than this to succeed, in AllesEkar, this would amount to a firearms of 9 and a CQ attack skill of 6. I think CQ is elevated because of game balance. 
+Considering that a Ghulam is your standard infantry, this would kind of work for a standard infantry in AllesEkar, where they have a 13 attribute and +4 "proficient" skill aptitude.
+But the second they get slightly stronger, it kinda breaks down. For example, Khawarij has a BS of 13, which is a 7, which would be someone "practiced" with "adept" capabilities.
+I think the first task and purpose is to lower the aptitude scores. It would do the game balance great service if I kept modifiers chromatic instead of whole tonal. So, I propose the new set of aptitude scores:
+- Inexperienced (+0 or not defined). This is the default for skills undefined.
+- Novice (+1). A unit has a basic understanding of the skill
+- Proficient (+2). A unit is able to perform the skill effectively.
+- Adept (+3). A unit is well familiarised with the skill.
+- Expert (+4). A unit has a thorough understanding of the skill.
+- Master (+5). A unit has an exhaustive understanding of the skill and its intricacies.
+
+Lowering the power of the aptitudes will hopefully create a more balanced game by giving more control over modifiers (and not just limiting them to evens). 
+I think the attributes are fine for now. They range from 17 to 9, which is cool. The only issue now is "complete mastery" would land someone with a 4 to match or beat. This gives an 85% success rate which come to think of it is completely fair.
+
+As for the armour imbalances, I might need to reconsider damage as a whole.
+I think its in order I discuss bullet calibre and comparisons to getting hit with things like swords
+A sword deals 12 damage. A simple low calibre bullet deals 15 bullet damage.
+I think i will reassess how melee damage works. I even say that PH is an influencer for melee damage in many ways, and I need to start considering how these melee weapons work as a "force multiplier" rather than a flat damage type such as bullet weapons.
+So maybe swords offer a simple damage of PH-2. This would mean their damage would scale with the PH of their user, making PH a more valuable skill and point cost for damage infinitely more difficult to calculate.
+I think i might separate armour values more also, because having 5 protection against damage types like Slash and Crush makes more sense than having 5 protection against bullets. Like in Infinity heavily mechd up Janissaries only have 4 armour, which is supposed to protect against bullets, but you can imagine their high tech metal suits almost entirely mitigate slashing damage
+So I might divide damage into two types, a simple and advanced type. The idea is that simple damage types are quite easy to defend against, so armour points against them cost less. Advanced damage types are harder to defend against, so armour points against them cost a lot.
+
+# Team rolls
+I want to actually figure out how im going to do teams.
+So the whole idea is to combine a pack of n identical agents and have them do everything together to simplify the game when played with large groups.
+Let's define the problem:
+The probability that a dice roll is a success is calculated by
+$$P(\text{success})=\frac{20-s+1}{20}$$
+where s is the target score, and its a meet or beet. So the success of trying to beat a 12 would be 45%
+
+But i want to model a team success probability, with a distribution. The idea is that while some actions will have uniform success (like movement actions), many actions like combat ones would have a distributed success, meaning that only a percentage of models would succeed.
+This can be modelled by a Bernoulli distribution like so:
+So the probability of k successes in k trials is given by the formula
+$$P(k;n,p)=C(n,k)\times ^k \times (1-p)^{n-k}$$
+where p is the success rate above. This calculates the probability of having exactly that many successes, which is useful for calculations but not so useful if we want to model this in a dice roll.
+What we really want is the probability that at least n agents succeeded. This could give us something better to abstract as a dice roll.
+$$P(X\geq n)=\sum_{i=n}^k{P(X=i)}$$
+Given all this maths, I think i've come up with a way to model the probability distribution using dice.
+I present to you: the summed dice roll!
+the idea is that when you roll two dice and sum them up, that number then falls on a probability distribution.
+So what if we rolled one team dice, a d20, and then two other dice, lets say d10s, as a distribution dice?
+The idea is that you can then add these up and find the distribution of successes and failures.
+
+So under this model, the team roll would be a d20, then a distribution dice of 2d5.
+The chance of getting a 6 is 20%. This should mean that the variance is on the team roll. If you got a 8 with 12% chance, then the variance would be higher than the team roll by two marks. If you got a 3 with 8% chance, then the variance would be higher than the team roll by 3 marks.
+![[2d5 distribution.png]]
+Okay, so, the idea here is a buffer.
+
+given a success value s, and a roll r, the buffer is r - s. This means that if you roll above the value, you have more of a buffer for a bad distribution roll. The same applies in reverse, if the buffer is negative you'll need a better distribution roll to have more of your guys still succeed.
+What I want to do is force a player with a team to do more calculation.
+The buffer is a certain percentage of the team, built around 10 team members. So a buffer of 2 with 10 team members would be a buffer of 2, whereas a buffer of 2 with 20 team members would be a buffer of 4. 
+Now, you need to use the distribution dice. Lets say you rolled badly and got a 3. With a team of 10, the idea is that the distribution performance is 3-6, or -3. This means that 3 of your team fail anyway, but with a buffer of 2 this means that only 1 of your team has failed.
+For a team of 20, a distribution performance of -3 would mean 6 should fail, but only 2 fail with a buffer of  2.
+
+But i think this needs some work. Lets say that a team rolls with a buffer of 0. Then ideally, rolling a distribution of 5 (giving a distribution performance of -1) should really make 2 team members fail.
+
+## team roll system
+So you want to make a team roll, eh? dont want to roll 10 individual d20s so you just want to roll 1 eh? well good luck with that. Here's how Allesfezs Ekarschubi models a distribution of team success and failure! HAHAHAHAH!
+
+You have a success value s, determined normally for a unit.
+You then make a team performance roll t, which is a normal d20. You want this to meet or beat the success value, but due to the distribution of team performance some of your units will still succeed or fail this.
+
+Then, you calculate the buffer b with t - s. You minus the team performance roll with the success value. This value determines how many models in your team will still succeed if you roll badly on a distribution dice.
+
+whats a distribution dice? GLAD YOU ASKED!!
+A distribution die is a five-sided die with the numbers (-4, -2, 0, +2, +4) on it. a distribution dice roll is two of these added together. This directly gives you a distribution performance d. 
+You can use normal d5s, but then you have to convert your roll into a distribution performance with 2r-6, whereas a distribution dice roll gives it directly.
+You then calculate the distributed success value f with b + d. This represents the overall success of a team, with negative values representing failure. 
+If this value is positive and you rolled underneath the success value, then some models succeed anyway. If it is negative and you rolled over the success value, then some models will fail anyway.
+The exact number of models depends on your team size. To find the exact number of models that the distributed success value affects, round your team size (n') to the nearest 5 and multiply the distributed success value by n'/10. 
+
+Team rolls can go five ways.
+- The team roll is bad and the distribution is bad. The team fails
+- The team roll is bad but the distribution is good. Some models in the team might still succeed
+- The distribution is 0. The team roll determines whole team success
+- The team roll is good and the distribution is bad. Some models in the team might fail.
+- The team roll is good and the distribution is good. The team succeeds.
+
+Teams will have to make this type of roll mostly for attacks and armour saves. 

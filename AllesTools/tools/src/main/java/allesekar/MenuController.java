@@ -20,4 +20,9 @@ public class MenuController
     {
         App.setRoot("armourCards");
     }
+    @FXML
+    private void toSettings() throws IOException
+    {
+        App.setRoot("settings");
+    }
 }

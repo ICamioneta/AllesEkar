@@ -5,118 +5,33 @@
             "armour_value_costs":
             [
                 {
-                    "point_range": 
-                    {
-                      "min": 0,
-                      "max": 5
-                    },
-                    "damage_costs": 
-                    {
-                      "Slash": "1/6",
-                      "Crush": "1/6",
-                      "Pierce": "1/6",
-                      "Bullet": "1/6",
-                      "AP": 1,
-                      "Laser": "1/6",
-                      "Plasma": "1/6",
-                      "total_per_level": 2
-                    },
-                    "total_for_all": 10
-                  },
-                  {
-                    "point_range": 
-                    {
-                      "min": 6,
-                      "max": 10
-                    },
-                    "damage_costs": 
-                    {
-                      "Slash": 0.25,
-                      "Crush": 0.25,
-                      "Pierce": 0.25,
-                      "Bullet": 0.25,
-                      "AP": 1,
-                      "Laser": 0.5,
-                      "Plasma": 0.5,
-                      "total_per_level": 3
-                    },
-                    "total_for_all": 35
-                  },
-                  {
-                    "point_range": 
-                    {
-                      "min": 11,
-                      "max": 15
-                    },
-                    "damage_costs": 
-                    {
-                      "Slash": 0.5,
-                      "Crush": 0.5,
-                      "Pierce": 0.5,
-                      "Bullet": 0.5,
-                      "AP": 2,
-                      "Laser": 0.5,
-                      "Plasma": 0.5,
-                      "total_per_level": 5
-                    },
-                    "total_for_all": 60
-                  },
-                  {
-                    "point_range": 
-                    {
-                      "min": 16,
-                      "max": 20
-                    },
-                    "damage_costs": 
-                    {
-                      "Slash": 0.75,
-                      "Crush": 0.75,
-                      "Pierce": 0.75,
-                      "Bullet": 0.75,
-                      "AP": 2,
-                      "Laser": 1,
-                      "Plasma": 1,
-                      "total_per_level": 7
-                    },
-                    "total_for_all": 95
-                  },
-                  {
-                    "point_range": 
-                    {
-                      "min": 20,
-                      "max": 30
-                    },
-                    "damage_costs": 
-                    {
-                      "Slash": 1,
-                      "Crush": 1,
-                      "Pierce": 1,
-                      "Bullet": 1,
-                      "AP": 3,
-                      "Laser": 1,
-                      "Plasma": 1,
-                      "total_per_level": 9
-                    },
-                    "total_for_all": 140
-                  },
-                  {
-                    "point_range": 
-                    {
-                      "min": 30
-                    },
-                    "damage_costs": 
-                    {
-                      "Slash": 1.25,
-                      "Crush": 1.25,
-                      "Pierce": 1.25,
-                      "Bullet": 1.25,
-                      "AP": 3,
-                      "Laser": 1.5,
-                      "Plasma": 1.5,
-                      "total_per_level": 11
-                    },
-                    "total_for_all": null
-                  }
+                  "name": "Slash",
+                  "cost": 1
+                },
+                {
+                  "name": "Crush",
+                  "cost": 1
+                },
+                {
+                  "name": "Pierce",
+                  "cost": 1
+                },
+                {
+                  "name": "Bullet",
+                  "cost": 2
+                },
+                {
+                  "name": "Laser",
+                  "cost": 2
+                },
+                {
+                  "name": "Plasma",
+                  "cost": 2
+                },
+                {
+                  "name": "AP",
+                  "cost": 3
+                }
             ]
         },
         {

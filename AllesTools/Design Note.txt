@@ -1,0 +1,2 @@
+AllesTools is my way of JSONifying the Allesfezs Ekarschubi project. The main idea is that I will be changing elements of this game frequently, from point cost to modifier boundaries. I want a more solid way to keep track of this than in the rule book, so I've decided to put it all to json.
+

@@ -1,0 +1,47 @@
+{
+    "units":
+    [
+        {
+            "name": "Medieval Foot Knights 16th century",
+            "variant": "poleaxe",
+            "MOT": "practiced",
+            "PHY": "comfortable", 
+            "WIL": "practiced",
+            "STR": 1,
+            "Skills":
+            [
+                {
+                    "name": "one-handed striking",
+                    "aptitude": "proficient"
+                },
+                {
+                    "name": "two-handed striking",
+                    "aptitude": "adept"
+                },
+                {
+                    "name": "piloting",
+                    "aptitude": "proficient"
+                },
+                {
+                    "name": "block",
+                    "aptitude": "novice"
+                }
+            ],
+            "Equipment":
+            [
+                {
+                    "name": "sword",
+                    "type": "weapon"
+                },
+                {
+                    "name": "poleaxe",
+                    "type": "weapon"
+                },
+                {
+                    "name": "full plate",
+                    "type": "armour"
+                }
+            ]
+        }
+    ]
+}

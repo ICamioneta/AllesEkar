@@ -2,94 +2,94 @@
     "unit_card": 
     [
         {
-            "attribute_costs":
+            "attributes":
             [
                 {
+                    "name": "useless",
                     "score": 17,
-                    "cost": 0,
-                    "cumulative_cost": 0
+                    "cost": 0
                 },
                 {
+                    "name": "poor",
                     "score": 16,
-                    "cost": 1,
-                    "cumulative_cost": 1
+                    "cost": 1
                 },
                 {
+                    "name": "lacking",
                     "score": 15,
-                    "cost": 1,
-                    "cumulative_cost": 2
+                    "cost": 1
                 },
                 {
+                    "name": "default",
                     "score": 14,
-                    "cost": 2,
-                    "cumulative_cost": 4
+                    "cost": 2
                 },
                 {
+                    "name": "practiced",
                     "score": 13,
-                    "cost": 4,
-                    "cumulative_cost": 8
+                    "cost": 4
                 },
                 {
+                    "name": "comfortable",
                     "score": 12,
-                    "cost": 8,
-                    "cumulative_cost": 16
+                    "cost": 8
                 },
                 {
+                    "name": "competative",
                     "score": 11,
-                    "cost": 14,
-                    "cumulative_cost": 30
+                    "cost": 14
                 },
                 {
+                    "name": "excelling",
                     "score": 10,
-                    "cost": 20,
-                    "cumulative_cost": 50
+                    "cost": 20
                 },
                 {
+                    "name": "masterful",
                     "score": 9,
-                    "cost": 30,
-                    "cumulative_cost": 80
+                    "cost": 30
                 }
             ]
 
         },
         {
-            "aptitude_costs":
+            "aptitudes":
             [
                 {
+                    "name": "inexperienced",
                     "mod": 0,
                     "cost": 0,
-                    "cumulative_cost": 0,
                     "min_attribute": null
                 },
                 {
-                    "mod": 2,
+                    "name": "novice",
+                    "mod": 1,
                     "cost": 4,
-                    "cumulative_cost": 4,
-                    "min_attribute": 14
+                    "min_attribute_name": "default"
                 },
                 {
-                    "mod": 4,
+                    "name": "proficient",
+                    "mod": 2,
                     "cost": 6,
-                    "cumulative_cost": 10,
-                    "min_attribute": 13
+                    "min_attribute_name": "practiced"
                 },
                 {
-                    "mod": 6,
+                    "name": "adept",
+                    "mod": 3,
                     "cost": 8,
-                    "cumulative_cost": 18,
-                    "min_attribute": 13
+                    "min_attribute_name": "practiced"
                 },
                 {
-                    "mod": 8,
+                    "name": "expert",
+                    "mod": 4,
                     "cost": 12,
-                    "cumulative_cost": 30,
-                    "min_attribute": 12
+                    "min_attribute_name": "comfortable"
                 },
                 {
-                    "mod": 10,
+                    "name": "master",
+                    "mod": 5,
                     "cost": 15,
-                    "cumulative_cost": 45,
-                    "min_attribute": 12
+                    "min_attribute_name": "comfortable"
                 }
             ]
         },
@@ -97,77 +97,81 @@
             "skills":
             [
                 {
-                    "name": "One-Handed Striking",
-                    "type": "Weapon"
+                    "name": "one-handed striking",
+                    "type": "weapon"
                 },
                 
                 {
-                    "name": "Finesse Stabbing",
-                    "type": "Weapon"
+                    "name": "finesse stabbing",
+                    "type": "weapon"
                 },
                 {
-                    "name": "Hooking",
-                    "type": "Weapon"
+                    "name": "hooking",
+                    "type": "weapon"
                 },
                 {
-                    "name": "Two-Handed Striking",
-                    "type": "Weapon"
+                    "name": "two-handed striking",
+                    "type": "weapon"
                 },
                 {
-                    "name": "Polearm",
-                    "type": "Weapon"
+                    "name": "polearm",
+                    "type": "weapon"
                 },
                 {
-                    "name": "Contact",
-                    "type": "Weapon"
+                    "name": "contact",
+                    "type": "weapon"
                 },
                 {
-                    "name": "Whips",
-                    "type": "Weapon"
+                    "name": "whips",
+                    "type": "weapon"
                 },
                 {
-                    "name": "Thrown",
-                    "type": "Weapon"
+                    "name": "thrown",
+                    "type": "weapon"
                 },
                 {
-                    "name": "Bows",
-                    "type": "Weapon"
+                    "name": "bows",
+                    "type": "weapon"
                 },
                 {
-                    "name": "Firearm",
-                    "type": "Weapon"
+                    "name": "firearm",
+                    "type": "weapon"
                 },
                 {
-                    "name": "Advanced Firearm",
-                    "type": "Weapon"
+                    "name": "advanced firearm",
+                    "type": "weapon"
                 },
                 {
-                    "name": "Artillery",
-                    "type": "Weapon"
+                    "name": "artillery",
+                    "type": "weapon"
                 },
                 {
-                    "name": "Improvised",
-                    "type": "Weapon"
+                    "name": "improvised",
+                    "type": "weapon"
                 },
                 {
-                    "name": "Interfacing",
-                    "type": "Basic"
+                    "name": "interfacing",
+                    "type": "basic"
                 },
                 {
-                    "name": "Agility",
-                    "type": "Basic"
+                    "name": "block",
+                    "type": "basic"
                 },
                 {
-                    "name": "Resolve",
-                    "type": "Basic"
+                    "name": "agility",
+                    "type": "basic"
                 },
                 {
-                    "name": "Piloting",
-                    "type": "Basic"
+                    "name": "resolve",
+                    "type": "basic"
                 },
                 {
-                    "name": "Magic",
-                    "type": "Basic"
+                    "name": "piloting",
+                    "type": "basic"
+                },
+                {
+                    "name": "magic",
+                    "type": "basic"
                 }
             ]
         }
